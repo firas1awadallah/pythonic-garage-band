@@ -66,7 +66,8 @@ class Band:
     def to_list(cls):
         return cls.instances
 
-
+    def add_member(self, member):
+        self.members.append(member)
 
 
 if __name__ == "__main__":
@@ -74,17 +75,32 @@ if __name__ == "__main__":
     sheila = Drummer("Sheila E.")
     meshell = Bassist("Meshell Ndegeocello")
 
-    print(str(joan)) 
-    print(repr(joan))  
-    print(str(sheila))  
-    print(repr(sheila))  
-    print(str(meshell))  
-    print(repr(meshell))  
+    print(str(joan))
+    print(repr(joan))
+    print(str(sheila))
+    print(repr(sheila))
+    print(str(meshell))
+    print(repr(meshell))
 
-    print(joan.get_instrument())  
-    print(sheila.get_instrument())  
-    print(meshell.get_instrument())  
+    print(joan.get_instrument())
+    print(sheila.get_instrument())
+    print(meshell.get_instrument())
 
-    print(joan.play_solo())  
-    print(sheila.play_solo())  
-    print(meshell.play_solo()) 
+    print(joan.play_solo())
+    print(sheila.play_solo())
+    print(meshell.play_solo())
+
+    nirvana = Band("Nirvana", [])
+    
+    jimi = Guitarist("Jimi Hendrix")
+    flea = Bassist("Flea")
+    ginger = Drummer("Ginger Baker")
+   
+    nirvana.add_member(jimi)
+    nirvana.add_member(flea)
+    nirvana.add_member(ginger)
+
+    print(nirvana.name)  
+    print(nirvana.members)  
+
+    
